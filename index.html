@@ -6,20 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuildsWorth</title>
     <link rel="shortcut icon" href="./img/BuildWorth_Logo_BW-removebg-preview.ico" type="image/x-icon">
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/burger.css">
     <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/progress_bar.css">
+    <link rel="stylesheet" href="./css/contact.css">
 </head>
 
 <body>
+
+    <!-- Progress bar -->
+    <div id="progress-bar" class="progress-bar-heightu">
+        <div id="progress-wrapper">
+            <span id="progress"></span>
+        </div>
+    </div>
     <nav class="navbar">
         <!-- hamburger -->
-        <img onclick="document.body.classList.toggle('open')" class="burger" src="./menu.svg" />
-        <img id="logo" src="./img/BuildWorth_Logo_BW-removebg-preview.png" />
+        <!-- <img onclick="document.body.classList.toggle('open')" class="burger" src="./menu.svg" /> -->
+        <div>
+            <!-- <input type="checkbox" id="toggler"> -->
+            <label for="toggler" class="burger" onclick="document.body.classList.toggle('open')">
+                <span class="bun bun--top">
+                    <span class="bun__crust bun__crust--top"></span>
+                </span>
+                <span class="bun bun--bottom">
+                    <span class="bun__crust bun__crust--bottom"></span>
+                </span>
+            </label>
+        </div>
+
+        <img id="logo" src="./img/BuildWorth_Logo_BW-removebg-preview.png" alt="logo" />
         <div class="menu-items">
             <!-- <div class="search">
                 <input value="Search or jump to..." />
@@ -28,17 +49,63 @@
             <div class="menu menu-left">
                 <a href="#">Home</a>
                 <a href="#">Services</a>
-                <a href="#">Contact Us</a>
+                <a href="#contact-div">Contact Us</a>
                 <a href="#">Enquiry</a>
             </div>
         </div>
         <div class="menu menu-right">
-            <span class="badge"></span>
-            <img src="bell.svg" />
+            <!-- <span class="badge"></span> -->
+            <a style="color: #1f1f1f" href="tel:9304019860">
+                <i class="fa-solid fa-phone-volume fa-beat-fade fa-xl"></i>
+                <!-- <span> <strong>9304019860</strong></span> -->
+                <!-- <box-icon name='phone-call' type='solid' flip='horizontal' animation='tada' color='#b1b1c5'></box-icon> -->
+            </a>
+            <!-- <a style="color: grey" href="mailto:design.buildsworth@gmail.com">
+                <box-icon type='logo' name='gmail' color='#b1b1c5'></box-icon>
+            </a> -->
+            <!-- <img src="bell.svg" />
             <img src="plus.svg" />
-            <img src="avatar.png" />
+            <img src="avatar.png" /> -->
         </div>
     </nav>̥
+
+    <!--alert messages start -->
+    <!-- <div class="alert-success">
+        <span>Message Sent! Thank you for contacting us.</span>
+    </div>
+    <div class="alert-error">
+        <span>Something went wrong! Please try again.</span>
+    </div> -->
+    <!-- alert messages end-->
+
+
+    <!--contact section start-->
+    <div class="contact-section" id="contact-div">
+        <div class="contact-info">
+            <div><i class="fas fa-map-marker-alt "></i>Address, City, Country</div>
+            <div><i class="fas fa-envelope"></i>contact@email.com</div>
+            <div><i class="fas fa-phone"></i>+00 0000 000 000</div>
+            <div><i class="fas fa-clock"></i>Mon - Fri 8:00 AM to 5:00 PM</div>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form class="contact" action="" method="post">
+                <input type="text" name="name" class="text-box" placeholder="Your Name" required>
+                <input type="email" name="email" class="text-box" placeholder="Your Email" required>
+                <!-- <textarea name="message" rows="5" placeholder="Your Message" required><textarea> -->
+                <textarea name="message" id="" cols="30" rows="5" placeholder="Your Message" required></textarea>
+                <!-- <input type="submit" name="submit" aria-label="send" class="send-btn" value="Send"> -->
+                <input type="submit" name="submit" class="btn" value="Send">
+
+            </form>
+        </div>
+    </div>
+
+    <!--contact section end-->
+
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./script/progress_bar.js"></script>
 </body>
 
 </html>
