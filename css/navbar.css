@@ -3,20 +3,43 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  height: 60px;
+  height: 8vh;
   padding: 0 20px;
   /* background: #505b69; */
-  background: #D8D9DA;
+  /* background: #D8D9DA; */
   /* background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-	transition: 0.5s ease; */
-  z-index: 20;
+  backdrop-filter: blur(20px); */
+  background: #ECE9E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	transition: 0.5s ease;
+  z-index: 20000;
+  position: fixed;
+  width: 100%;
 }
 
 nav img {
+  width: 60px;
+  /* height: 24px; */
+  /* transform-origin: 0% 50%; */
+  transition: 0.3s;
+}
+
+nav.scrolled-down {
+  height: 80px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.14);
+  /* filter: invert(80%); */
+}
+
+nav.scrolled-down img {
+  scale: 1.25;
+}
+
+/* nav img {
   width: 30px;
   height: 30px;
-}
+} */
 
 .burger {
   display: none;
@@ -27,6 +50,7 @@ nav img {
 .menu {
   display: flex;
   gap: 16px;
+  z-index: 2;
 }
 
 .menu-right {
@@ -35,11 +59,11 @@ nav img {
   gap: 6px;
 }
 
-.menu-right img {
+/* .menu-right img {
   width: 30px;
   height: 30px;
   padding: 5px;
-}
+} */
 
 .menu-right .badge {
   position: absolute;
@@ -92,9 +116,9 @@ a:is(:visited, :active) {
 }
 
 @media (width <= 580px) {
-  .menu-right img:nth-child(n + 3) {
+  /* .menu-right img:nth-child(n + 3) {
     display: none;
-  }
+  } */
 
   .menu-items {
     display: none;
@@ -107,12 +131,17 @@ a:is(:visited, :active) {
     padding: 0 20px 20px;
     background: #161b22;
     background: #D8D9DA;
-
+    
+    
+  
+    
+    
   }
 
   .menu-left {
     flex-direction: column;
     gap: 12px;
+    
   }
 
   .menu-left a {
@@ -134,4 +163,5 @@ a:is(:visited, :active) {
 
 body.open .menu-items {
   display: flex;
+  
 }

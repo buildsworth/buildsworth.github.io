@@ -114,9 +114,10 @@ span:not(#progress):nth-of-type(3) {
 /* Begin Progress Bar */
 #progress-bar {
   width: 100%;
-  background: #33ffbb;
+  background: #64FFDA;
   height: 3px;
-
+  position: fixed;
+  top: 8vh;
   z-index: 3;
   transition: 0.3s;
 }

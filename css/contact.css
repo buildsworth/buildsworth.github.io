@@ -8,10 +8,12 @@
 } */
 
 .contact-section {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .contact-info {
@@ -81,7 +83,7 @@
 
 .contact-form .send-btn {
   float: right;
-  background: #33ffbb;
+  /* background: #33ffbb; */
   /* color: #fff; */
   border: none;
   width: 120px;
@@ -104,7 +106,8 @@
 .btn {
   float: right;
   font-family: "Roboto", sans-serif;
-  width: 125px;
+  min-width: 125px;
+  padding: 5px;
   height: 45px;
   font-size: 15px;
   font-weight: 600;
