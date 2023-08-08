@@ -149,11 +149,12 @@
 
   .contact-info,
   .contact-form {
-    margin: 30px 50px;
+    margin: 30px 25px;
   }
   .contact-info{
     padding-left: 0px;
-    font-size: 20px;
+    font-size: 15px;
+    line-height:  50px;
 
   }
 
