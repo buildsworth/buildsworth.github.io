@@ -61,8 +61,23 @@
   opacity: 0.9;
 }
 
-.contact-form .text-box:first-child {
+select option {
+  color: #8d92a1;
+}
+
+#project{
+color: #5F6063;
+}
+
+
+
+
+/* .contact-form .text-box:first-child {
   margin-right: 15px;
+} */
+
+.contact-form .text-box:nth-child(2n) {
+  margin-left: 15px;
 }
 
 .contact-form textarea {
@@ -165,6 +180,11 @@
   .contact-form .text-box {
     width: 100%;
   }
+
+  .contact-form .text-box:nth-child(2n) {
+    margin-left: 0px;
+  }
+  
 }
 
 

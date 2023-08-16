@@ -10,6 +10,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/burger.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="./css/about.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/testimonials.css">
 </head>
 
 <body>
@@ -89,9 +91,9 @@
             <li><a href="#" target="_blank" rel="noopener noreferrer"><i
                         class="fa-brands fa-square-facebook fa-2xl"></i></a></li>
             <li><a href="#" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-x-twitter fa-2xl"></i>
-                    
-                    </a></li>
+                    <i class="fa-brands fa-x-twitter fa-2xl"></i>
+
+                </a></li>
             <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram fa-2xl"></i></a>
             </li>
             <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
@@ -118,13 +120,15 @@
             <div class="contents">
 
 
-                <h3 >Building Your Dreams with Excellence</h3>
-                <p id="about-para-1">We are not just a construction firm. We are a team of professionals who share your passion and
+                <h3>Building Your Dreams with Excellence</h3>
+                <p id="about-para-1">We are not just a construction firm. We are a team of professionals who share your
+                    passion and
                     enthusiasm
                     for your project. We collaborate with you from the design phase to the completion phase, ensuring
                     that
                     every aspect of your project is done according to your wishes and needs.</p><br>
-                <p id="about-para-2">At BuildsWorth, we understand that your construction project is more than just a job. It is your
+                <p id="about-para-2">At BuildsWorth, we understand that your construction project is more than just a
+                    job. It is your
                     dream,
                     your vision, your future. That is why we are committed to providing you with the best service and
                     quality possible.</p>
@@ -160,7 +164,8 @@
     <!--contact section start-->
     <div class="contact-section" id="contact-div">
         <div class="contact-info">
-            <div><i class="fa-solid fa-location-dot xsm"></i></i>Lane 6, Jay Prakash Nagar, Jharudih, Dhanbad, Jharkhand 826001, INDIA</div>
+            <div><i class="fa-solid fa-location-dot xsm"></i></i>Lane 6, Jay Prakash Nagar, Jharudih, Dhanbad, Jharkhand
+                826001, INDIA</div>
             <div><i class="fa-solid fa-envelope"></i>design.buildsworth@gmail.com</div>
             <div><i class="fa-solid fa-phone"></i>+91 9304019860</div>
             <div><i class="fa-solid fa-clock"></i>Mon-Fri 8:00 AM to 5:00 PM</div>
@@ -169,7 +174,23 @@
             <h2>Contact Us</h2>
             <form class="contact" action="" method="post">
                 <input type="text" name="name" class="text-box" placeholder="Your Name" required>
-                <input type="email" name="email" class="text-box" placeholder="Your Email" required>
+                <input type="text" name="phone" class="text-box" placeholder="Your Phone Number" required>
+                <input type="email" name="email" class="text-box" placeholder="Your Email">
+
+                <!-- <label for="cars">Choose a car:</label> -->
+
+                <select id="project" name="project" class="text-box">
+                    <option  value="" disabled selected>Enter Project Type</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="office">Office</option>
+                    <option value="interior">Interior</option>
+                    <option value="landscape">Landscape</option>
+                    <option value="others">Others</option>
+                </select>
+                <input type="text" name="location" class="text-box" placeholder="Location">
+                <input type="text" name="area" class="text-box" placeholder="Project Area in sqft">
+                
                 <!-- <textarea name="message" rows="5" placeholder="Your Message" required><textarea> -->
                 <textarea name="message" id="" cols="30" rows="5" placeholder="Your Message" required></textarea>
                 <!-- <input type="submit" name="submit" aria-label="send" class="send-btn" value="Send"> -->
@@ -200,9 +221,12 @@
         </div>
     </footer>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="./script/progress_bar.js"></script>
+    <script src="./script/testimonial.js"></script>
 </body>
 
 </html>
