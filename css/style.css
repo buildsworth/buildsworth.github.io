@@ -31,7 +31,11 @@ body {
   /* background: rgb(0,31,63);
   background: linear-gradient(225deg, rgba(0,31,63,1) 0%, rgba(4,60,85,1) 95%); */
   /* background: #001f3f; */
-  background: #0A192F;
+  /* background: #0A192F; */
+  /* background: #0f051d; */
+  background: radial-gradient(#281c3e, #0f051d);
+  /* background: #0f051d; */
+
 
   
   /* background: #0d1117; */
@@ -182,7 +186,7 @@ body {
     font-size: 3em;
     font-weight: 600;
     line-height: 1em;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     /* max-width: 800px; */
     color: #CCD6F6;
     text-align: center;
