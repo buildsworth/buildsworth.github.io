@@ -9,11 +9,19 @@ nav {
   /* background: #D8D9DA; */
   /* background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px); */
-  background: #ECE9E6;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-	transition: 0.5s ease;
+  transition: 0.5s ease;
   z-index: 20000;
   position: fixed;
   width: 100%;
@@ -36,6 +44,11 @@ nav.scrolled-down img {
   scale: 1.25;
 }
 
+nav a {
+  font-weight: 600;
+  color: rgb(95, 91, 91);
+  
+}
 /* nav img {
   width: 30px;
   height: 30px;
@@ -130,18 +143,12 @@ a:is(:visited, :active) {
     left: 0;
     padding: 0 20px 20px;
     background: #161b22;
-    background: #D8D9DA;
-    
-    
-  
-    
-    
+    background: #d8d9da;
   }
 
   .menu-left {
     flex-direction: column;
     gap: 12px;
-    
   }
 
   .menu-left a {
@@ -163,5 +170,4 @@ a:is(:visited, :active) {
 
 body.open .menu-items {
   display: flex;
-  
 }

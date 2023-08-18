@@ -22,7 +22,7 @@
   max-width: 1350px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   align-items: center;
   gap: 2rem;
   text-align: center;

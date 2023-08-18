@@ -53,6 +53,15 @@ Testimonial Swiper Queries Section
   text-decoration: none;
 }
 
+/* to check  */
+.heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .container {
   max-width: 90vw;
   margin: 0 auto;
