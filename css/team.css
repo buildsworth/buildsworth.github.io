@@ -43,6 +43,8 @@
   height: auto;
   border-radius: 15px;
   margin-bottom: 15px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 /* .center h1 {
   color: #fff;

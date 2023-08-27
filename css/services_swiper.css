@@ -1,0 +1,81 @@
+/* Demo styles end */
+.carousel {
+  width: 42vw;
+}
+
+.swiper-figure {
+  position: relative;
+  background-color: #000;
+  width: 100%;
+}
+
+.swiper-figure img {
+  aspect-ratio: 3/2;
+}
+
+.swiper button {
+  width: 50px;
+  height: 50px;
+  color: aqua;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: opacity 0.25s;
+}
+.swiper button:hover {
+  opacity: 0.8;
+}
+.swiper button::before,
+.swiper button::after {
+  font-size: 24px;
+}
+/* .swiper-pagination-bullet {
+				background-color: #fff;
+			} */
+
+.swiper-description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  isolation: isolate;
+  padding: 50px 25px 25px;
+  color: #fff;
+}
+.swiper-description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.8) 50%);
+}
+.swiper-description h2 {
+  font-size: 42px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: left;
+}
+.swiper-description p {
+  font-size: 14px;
+  max-width: 50%;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* <========== RESPONSIVE MOBILE DESIGN ==========>  */
+@media screen and (max-width: 1024px) {
+  /* SERVICES START  */
+
+  .carousel {
+    width: 85vw;
+  }
+  /* SERVICES END */
+}
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    width: 85vw;
+  }
+}

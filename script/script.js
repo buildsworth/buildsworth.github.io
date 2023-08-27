@@ -1,10 +1,10 @@
 // ========================================
 //  how to add media queries in JS
 // ========================================
-function myFunction(widthSize) {
+function testimonialsSwiperFunction(widthSize) {
   if (widthSize.matches) {
     // If media query matches
-    const swiper = new Swiper(".swiper", {
+    const swiper = new Swiper(".testimonials-swipper", {
       slidesPerView: 1,
       spaceBetween: 30,
       autoplay: {
@@ -18,7 +18,7 @@ function myFunction(widthSize) {
       },
     });
   } else {
-    const swiper = new Swiper(".swiper", {
+    const swiper = new Swiper(".testimonials-swipper", {
       slidesPerView: 2,
       spaceBetween: 30,
       autoplay: {
@@ -33,15 +33,32 @@ function myFunction(widthSize) {
   }
 }
 
+const servicesSwiper = new Swiper('.carousel', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  }
+})
+
 const widthSize = window.matchMedia("(max-width: 780px)");
 // Call listener function at run time
-myFunction(widthSize);
+testimonialsSwiperFunction(widthSize);
 // Attach listener function on state changes
-widthSize.addListener(myFunction);
+widthSize.addListener(testimonialsSwiperFunction);
 
 
 
-// Clients Counter
+// ------------ Clients Counter -------------
 
 $.fn.jQuerySimpleCounter = function( options ) {
   var settings = $.extend({
@@ -79,3 +96,33 @@ $('#number4').jQuerySimpleCounter({end: 6,duration: 2500});
     }, function(){
         $('.authorWindowWrapper').stop().fadeOut('fast').find('p').removeClass('trans');
     });
+
+
+//------------ FAQ Accordions ------------
+const faq = document.querySelector('.faq')
+faq.addEventListener('click', event => {
+	const question = event.target.closest('.faq__question')
+	if (!question) return
+	const answer = question.nextElementSibling
+	// hide previously opened answer and show the clicked answer
+	const currentAnswer = faq.querySelector('.faq__answer[aria-hidden="false"]')
+	if (currentAnswer === answer) {
+		// close the already open answer
+		answer.setAttribute('aria-hidden', 'true')
+		answer.parentNode.classList.remove('faq__item--expanded')
+		question.setAttribute('aria-expanded', 'false')
+	} else {
+		// hide previously open answer and show the clicked answer
+		if (currentAnswer) {
+			currentAnswer.setAttribute('aria-hidden', 'true')
+			currentAnswer.parentNode.classList.remove('faq__item--expanded')
+			currentAnswer.previousElementSibling.setAttribute(
+				'aria-expanded',
+				'false'
+			)
+		}
+		answer.setAttribute('aria-hidden', 'false')
+		answer.parentNode.classList.add('faq__item--expanded')
+		question.setAttribute('aria-expanded', 'true')
+	}
+})

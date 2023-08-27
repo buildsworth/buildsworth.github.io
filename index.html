@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="BuildsWorth: Construction, Interior and Exterior Design and Landscaping Services">
+    <meta name="description"
+        content="BuildsWorth is a leading firm that offers a wide range of services for building, renovating, and transforming your home or office space. Contact us today for a free consultation and quote.">
+    <meta name="keywords" content="construction, interior design, exterior design, landscaping, BuildsWorth">
+
     <title>BuildsWorth</title>
+
     <link rel="shortcut icon" href="./img/favicon-32x32.png" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -22,6 +28,7 @@
     <link rel="stylesheet" href="./css/team.css">
     <link rel="stylesheet" href="./css/testimonials.css">
     <link rel="stylesheet" href="./css/client_counter.css">
+    <link rel="stylesheet" href="./css/services_swiper.css">
 </head>
 
 <body>
@@ -36,7 +43,7 @@
         <!-- hamburger -->
         <!-- <img onclick="document.body.classList.toggle('open')" class="burger" src="./menu.svg" /> -->
         <div>
-            <input type="checkbox" id="toggler">
+            <input type="checkbox" id="toggler" title="toggler">
             <label for="toggler" class="burger" onclick="document.body.classList.toggle('open')">
                 <span class="bun bun--top">
                     <span class="bun__crust bun__crust--top"></span>
@@ -78,6 +85,7 @@
 
 
 
+    <!-- SHOWCASE STARTS  -->
     <section class="showcase">
         <video src="./video/pexels-kindel-media-7578550 (2160p).mp4" muted loop autoplay></video>
         <div class="overlay"></div>
@@ -103,12 +111,13 @@
             </li>
         </ul>
     </section>
+    <!-- SHOWCASE ENDS  -->
 
 
 
 
-    <!--about us section start-->
 
+    <!--ABOUT US STARTS-->
     <section class="about" id="about">
         <h3 class="sub-heading">About Us</h3>
         <h1 class="heading">Why choose Us? </h1>
@@ -160,15 +169,320 @@
         </div>
 
     </section>
-    <!--about us ends start-->
+    <!--ABOUT US ENDS-->
 
 
-    <!-- team starts -->
+    <!-- SERVICES STARTS  -->
+    <section class="services">
+        <div class="center">
+            <h1 class="heading">Services</h1>
+            <span class="headerLine"></span>
+        </div>
+
+
+        <div class="service-container">
+
+            <div class="row-container">
+                <div class="text-container">
+                    <h2 class="title">
+                        Architecture
+                    </h2>
+                    <p class="text">Architecture is the art and science of designing and constructing buildings and
+                        other
+                        structures. It is a creative and technical process that involves planning, designing,
+                        engineering,
+                        and managing the physical and functional aspects of a project. Architecture is also a reflection
+                        of
+                        the culture, history, and values of a society.
+                        <br><br>At BuildsWorth, we have a team of talented and experienced architects who can help you
+                        realize
+                        your
+                        vision for your home or office space. We offer architectural design and planning services for
+                        various types of projects, such as: <strong>Residential, Commercial, Industrial.</strong>
+                    </p>
+                </div>
+                <!-- 
+                <div class="img-container">
+                    <img src="./img/services/undraw_pen_tool_re_s92o.svg" alt="">
+                </div> -->
+
+                <!-- Swiper -->
+                <div class="swiper carousel img-container">
+                    <div class="swiper-wrapper">
+                        <figure class="swiper-slide swiper-figure">
+                            <img src="./img/landscaping.jpg" alt="" />
+                            <figcaption class="swiper-description">
+                                <h2>Lorem, ipsum.</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                    ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                </p>
+                            </figcaption>
+                        </figure>
+                        <figure class="swiper-slide swiper-figure">
+                            <img src="./img/landscaping2.jpg" alt="" />
+                            <figcaption class="swiper-description">
+                                <h2>Lorem, ipsum.</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                    ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                </p>
+                            </figcaption>
+                        </figure>
+                        <figure class="swiper-slide swiper-figure">
+                            <img src="./img/landscaping3.jpg" alt="" />
+                            <figcaption class="swiper-description">
+                                <h2>Lorem, ipsum.</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                    ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                </p>
+                            </figcaption>
+                        </figure>
+                        <figure class="swiper-slide swiper-figure">
+                            <img src="./img/landscaping.jpg" alt="" />
+                            <figcaption class="swiper-description">
+                                <h2>Lorem, ipsum.</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                    ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <button type="button" class="swiper-button-next"></button>
+                    <button type="button" class="swiper-button-prev"></button>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+
+            <div class="row-container">
+                <div class="text-container">
+                    <h2 class="title">
+                        Structure
+                    </h2>
+                    <p class="text">Building a structure that is strong, safe, and efficient requires the expertise and
+                        experience of qualified engineers. Our team at BuildsWorth can design and construct the
+                        structure of your building according to your specifications and requirements. We use the best
+                        materials and techniques to ensure that your building is stable, durable, and resistant to
+                        natural forces, such as wind, earthquake, and fire.<br><br> We also use the latest software and
+                        tools to
+                        perform structural analysis, testing, and optimization. We work closely with you throughout the
+                        project to ensure that your vision and expectations are met. Whether you need a simple or
+                        complex structure, a small or large building, a traditional or modern style, we can handle it
+                        with professionalism and excellence.
+                    </p>
+                </div>
+
+                <!-- <div class="img-container">
+                    <img src="./img/services/undraw_apartment_rent_o-0-ut.svg" alt="">
+                </div> -->
+                     <!-- Swiper -->
+                     <div class="swiper carousel img-container">
+                        <div class="swiper-wrapper">
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping2.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping3.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <button type="button" class="swiper-button-next"></button>
+                        <button type="button" class="swiper-button-prev"></button>
+                        <div class="swiper-pagination"></div>
+                    </div>
+            </div>
+
+
+            <div class="row-container">
+                <div class="text-container">
+                    <h2 class="title">
+                        Interiors
+                    </h2>
+                    <p class="text">Creating an interior that is comfortable, functional, and stylish requires the
+                        creativity and talent of skilled designers. Our team at BuildsWorth can create the interior of
+                        your building according to your style, taste, and needs. We offer interior design and decoration
+                        services for various types of buildings, such as residential, commercial, or industrial. We can
+                        create custom designs or work with existing ones. <br><br>We can also help you with furniture
+                        and
+                        fittings selection, installation, and maintenance. We have a wide range of options and styles to
+                        choose from, such as classic, contemporary, rustic, minimalist, or eclectic. We can also
+                        incorporate your personal preferences and ideas into the design to make it unique and appealing.
+                    </p>
+                </div>
+
+                <!-- <div class="img-container">
+                    <img src="./img/services/undraw_interior_design_re_7mvn.svg" alt="">
+                </div> -->
+                     <!-- Swiper -->
+                     <div class="swiper carousel img-container">
+                        <div class="swiper-wrapper">
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping2.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping3.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <button type="button" class="swiper-button-next"></button>
+                        <button type="button" class="swiper-button-prev"></button>
+                        <div class="swiper-pagination"></div>
+                    </div>
+            </div>
+
+
+            <div class="row-container">
+                <div class="text-container">
+                    <h2 class="title">
+                        Landscaping
+                    </h2>
+                    <p class="text">Transforming an outdoor space that is beautiful, valuable, and environmentally
+                        friendly requires the knowledge and skill of professional landscapers. Our team at BuildsWorth
+                        can transform the outdoor space of your building according to your preferences and goals. We
+                        offer landscaping design and construction services for various types of buildings, such as
+                        residential, commercial, or industrial. <br><br>We can create beautiful and functional
+                        landscapes that
+                        suit your climate and terrain. We can also help you with irrigation, drainage, fertilization,
+                        and maintenance. We have a variety of plants, flowers, trees, grasses, water features, pathways,
+                        fences, and lighting to enhance the beauty and value of your outdoor space. We can also create
+                        different themes and atmospheres for your landscape, such as tropical, zen, Mediterranean, or
+                        cottage.
+                    </p>
+                </div>
+
+                <!-- <div class="img-container">
+                    <img src="./img/services/undraw_city_life_gnpr (1).svg" alt="">
+                </div> -->
+
+                     <!-- Swiper -->
+                     <div class="swiper carousel img-container">
+                        <div class="swiper-wrapper">
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping2.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping3.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                            <figure class="swiper-slide swiper-figure">
+                                <img src="./img/landscaping.jpg" alt="" />
+                                <figcaption class="swiper-description">
+                                    <h2>Lorem, ipsum.</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur
+                                        ducimus iure nemo ullam autem asperiores aliquam voluptate provident ipsa.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <button type="button" class="swiper-button-next"></button>
+                        <button type="button" class="swiper-button-prev"></button>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                
+            </div>
+        </div>
+
+    </section>
+    <!-- SERVICES ENDS  -->
+
+    <!-- TEAM STARTS -->
     <section class="team">
         <div class="center">
             <h1 class="heading">Team</h1>
             <span class="headerLine"></span>
-
         </div>
 
         <div class="team-content">
@@ -180,7 +494,6 @@
                     <a href="#"><i class="ri-twitter-fill"></i></a>
                     <a href="#"><i class="ri-linkedin-box-fill"></i></a>
                     <a href="#"><i class="ri-instagram-fill"></i></a>
-                    <!-- <a href="#"><i class="ri-facebook-box-fill"></i></a> -->
                 </div>
             </div>
 
@@ -297,7 +610,7 @@
     <!-- team ends   -->
 
 
-    <!-- client counter  -->
+    <!-- CLIENT COUNTER STARTS-->
     <!-- <div class="sectiontitle">
         <h2>Projects statistics</h2>
         <span class="headerLine"></span>
@@ -333,11 +646,9 @@
         </div>
     </div>
 
-    <!-- client counter  ends-->
+    <!-- CLIENT COUNTER ENDS-->
 
-    <!-- ======================================== 
-          Our Testimonial Section Start  
-    ========================================  -->
+    <!-- TESTIMONIAL START -->
 
     <section class="section section-testimonial">
         <div class="heading-container">
@@ -348,9 +659,9 @@
 
         <!-- Slider main container -->
         <!-- Swiper -->
-        <div class="swiper mySwiper container">
+        <div class="swiper testimonials-swipper container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide-testimonials">
 
                     <div class="swiper-client-msg">
                         <p>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I
@@ -367,7 +678,7 @@
                     </div>
                 </div>
                 <!-- slide end  -->
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide-testimonials">
 
                     <div class="swiper-client-msg">
                         <p>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I
@@ -384,7 +695,7 @@
                     </div>
                 </div>
                 <!-- slide end  -->
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide-testimonials">
 
                     <div class="swiper-client-msg">
                         <p>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I
@@ -401,7 +712,7 @@
                     </div>
                 </div>
                 <!-- slide end  -->
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide-testimonials">
 
                     <div class="swiper-client-msg">
                         <p>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I
@@ -418,7 +729,7 @@
                     </div>
                 </div>
                 <!-- slide end  -->
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide-testimonials">
 
                     <div class="swiper-client-msg">
                         <p>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I
@@ -435,7 +746,7 @@
                     </div>
                 </div>
                 <!-- slide end  -->
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide-testimonials">
 
                     <div class="swiper-client-msg">
                         <p>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I
@@ -452,7 +763,7 @@
                     </div>
                 </div>
                 <!-- slide end  -->
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide-testimonials">
 
                     <div class="swiper-client-msg">
                         <p>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I
@@ -469,7 +780,7 @@
                     </div>
                 </div>
                 <!-- slide end  -->
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide-testimonials">
 
                     <div class="swiper-client-msg">
                         <p>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I
@@ -490,14 +801,108 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
+        <!-- </div> -->
+    </section>
+    <!-- TESTIMONIAL ENDS -->
+
+
+
+    <!-- FAQ Start -->
+
+    <section class="section section-faq">
+        <div class="heading-container">
+            <h2 class="heading">FAQ</h2>
+            <span class="headerLine"></span>
+        </div>
+
+        <div class="container" aria-label="Frequently Asked Questions">
+            <section class="faq">
+                <header class="faq__header">
+                    <h2 class="faq__title">Frequently Asked Questions</h2>
+                    <p class="faq__subtitle">
+                        Everything You Need to Know About Our Services
+                    </p>
+                </header>
+                <hr class="faq__separator" />
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false" aria-controls="answer1">
+                        What services do you offer at BuildsWorth?
+                        <i class="faq__icon ri-arrow-drop-right-line"></i>
+                    </button>
+                    <div class="faq__answer" id="answer1" aria-hidden="true">
+                        <div class="faq__answer-inner">
+                            <p class="faq__answer-text">
+                                BuildsWorth is a construction, interior and exterior design and landscaping firm that
+                                offers a wide range of services to suit your needs. Whether you want to build a new
+                                home, renovate an existing one, or transform your outdoor space, we have the expertise
+                                and experience to make it happen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false" aria-controls="answer2">
+                        How do you ensure quality and safety in your projects?
+                        <i class="faq__icon ri-arrow-drop-right-line"></i>
+                    </button>
+                    <div class="faq__answer" id="answer2" aria-hidden="true">
+                        <div class="faq__answer-inner">
+                            <p class="faq__answer-text">
+                                Quality and safety are our top priorities at BuildsWorth. We follow the highest
+                                standards of workmanship and professionalism in every project we undertake. We use only
+                                the best materials and equipment, and we adhere to all the relevant codes and
+                                regulations. We also have a team of qualified and trained engineers, architects,
+                                designers, contractors, and workers who are committed to delivering excellent results.
+                                We monitor and inspect every stage of the project, from design to completion, to ensure
+                                that everything is done according to your specifications and expectations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false" aria-controls="answer3">
+                        How do you charge for your services?
+                        <i class="faq__icon ri-arrow-drop-right-line"></i>
+                    </button>
+                    <div class="faq__answer" id="answer3" aria-hidden="true">
+                        <div class="faq__answer-inner">
+                            <p class="faq__answer-text">
+                                Our pricing is transparent and competitive at BuildsWorth. We provide you with a
+                                detailed quotation before we start any project, which includes the scope of work, the
+                                timeline, the materials, the labor, and any other costs involved. We do not charge any
+                                hidden fees or extra charges. We also offer flexible payment options, such as
+                                installment plans, to suit your budget and convenience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false" aria-controls="answer4">
+                        How can I contact you for a consultation or a quote?
+                        <i class="faq__icon ri-arrow-drop-right-line"></i>
+                    </button>
+                    <div class="faq__answer" id="answer4" aria-hidden="true">
+                        <div class="faq__answer-inner">
+                            <p class="faq__answer-text">
+                                You can contact us anytime for a free consultation or a quote for your project. You can
+                                call us at our phone number, email us at our email address, or fill out our online form
+                                on our website. We will get back to you as soon as possible to discuss your requirements
+                                and answer any questions you may have. We look forward to hearing from you and working
+                                with you on your dream project.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </section>
-    <!-- testimonials ends  -->
+    <!-- FAQ ENDS  -->
 
 
 
     <!--contact section start-->
-    <div class="contact-section" id="contact-div">
+    <section class="contact-section" id="contact-div">
         <div class="contact-info">
             <div><i class="fa-solid fa-location-dot xsm"></i></i>Lane 6, Jay Prakash Nagar, Jharudih, Dhanbad, Jharkhand
                 826001, INDIA</div>
@@ -512,10 +917,9 @@
                 <input type="text" name="phone" class="text-box" placeholder="Your Phone Number" required
                     pattern="[0-9]+">
                 <input type="email" name="email" class="text-box" placeholder="Your Email">
-
                 <!-- <label for="cars">Choose a car:</label> -->
 
-                <select id="project" name="project" class="text-box">
+                <select id="project" name="project" class="text-box" title="project-selections">
                     <option value="" disabled selected>Enter Project Type</option>
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial</option>
@@ -534,7 +938,7 @@
 
             </form>
         </div>
-    </div>
+    </section>
 
     <!--contact section end-->
 
