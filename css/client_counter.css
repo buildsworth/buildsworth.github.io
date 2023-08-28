@@ -52,6 +52,23 @@ body {
   flex-wrap: wrap;
 }
 
+#projectFacts {
+  animation: appear 2s linear infinite;
+  animation-direction: reverse;
+}
+
+@scroll {
+  .my-div {
+    display: block;
+  }
+}
+
+@scroll {
+  .my-div {
+    display: none;
+  }
+}
+
 #projectFacts .fullWidth {
   padding: 0;
 }

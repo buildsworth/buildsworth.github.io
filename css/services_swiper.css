@@ -71,11 +71,27 @@
   .carousel {
     width: 85vw;
   }
+
+  .swiper-description h2 {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  .swiper-description p {
+    font-size: 12px;
+    max-width: 100%;
+    /* margin-bottom: 10px; */
+    text-align: left;
+  }
+
+  .swiper button {
+    width: 10px;
+    height: 10px;
+  }
   /* SERVICES END */
 }
 
 @media screen and (max-width: 768px) {
   .carousel {
-    width: 85vw;
+    width: 90vw;
   }
 }

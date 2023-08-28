@@ -123,10 +123,12 @@ body {
 .text h3 {
   font-size: 3em;
   font-weight: 600;
-  line-height: 1em;
+  line-height: 1.3em;
   text-transform: uppercase;
   max-width: 800px;
 }
+
+
 
 .text p {
   font-size: 1.1em;
