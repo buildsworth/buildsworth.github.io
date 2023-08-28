@@ -2,18 +2,17 @@
 const nav = document.querySelector("#nav");
 const progressBar = document.querySelector("#progress-bar");
 
-
 const onScroll = (event) => {
   const scrollPosition = event.target.scrollingElement.scrollTop;
   if (scrollPosition > 10) {
     if (!nav.classList.contains("scrolled-down"))
       nav.classList.add("scrolled-down");
-      progressBar.classList.add("progress-bar-heightd");
+    progressBar.classList.add("progress-bar-heightd");
   } else {
     if (nav.classList.contains("scrolled-down"))
       nav.classList.remove("scrolled-down");
-      progressBar.classList.remove("progress-bar-heightd");
-
+    progressBar.classList.remove("progress-bar-heightd");
+    whatsappOpenner.style.display = "none";
   }
 };
 

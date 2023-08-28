@@ -1,4 +1,3 @@
-
 // ========================================
 //  how to add media queries in JS
 // ========================================
@@ -92,7 +91,6 @@ widthSize.addListener(testimonialsSwiperFunction);
 // $("#number3").jQuerySimpleCounter({ end: 8, duration: 2000 });
 // $("#number4").jQuerySimpleCounter({ end: 6, duration: 2500 });
 
-
 // $(document).ready(function(){
 //   $('.counter').counterUp({
 //     delay: 10,
@@ -107,61 +105,54 @@ widthSize.addListener(testimonialsSwiperFunction);
 //   }
 // })
 
-
 // const { counterUp } = window.counterUp;
 
 // const el = document.querySelector( '.counter' )
 // new Waypoint( {
 //     element: el,
-//     handler: function() { 
-//         counterUp( el ) 
+//     handler: function() {
+//         counterUp( el )
 //         this.destroy()
 //     },
 //     offset: 'bottom-in-view',
 // } )
 
+$(document).ready(function () {
+  jQuery(function ($) {
+    "use strict";
 
+    var counterUp = window.counterUp["default"]; // import counterUp from "counterup2"
 
-$( document ).ready( function() {
-	
-	jQuery(function ($) {
-    	"use strict";
-    
-    	var counterUp = window.counterUp["default"]; // import counterUp from "counterup2"
-    
-    	var $counters = $(".counter");
-    
-    	/* Start counting, do this on DOM ready or with Waypoints. */
-		$counters.each(function (ignore, counter) {
-			var waypoint = new Waypoint( {
-				element: $(this),
-				handler: function() { 
-					counterUp(counter, {
-						duration: 1200,
-						delay: 16
-					}); 
-					this.destroy();
-				},
-				offset: 'bottom-in-view',
-			} );
-		});
+    var $counters = $(".counter");
 
-	});
- });
-
+    /* Start counting, do this on DOM ready or with Waypoints. */
+    $counters.each(function (ignore, counter) {
+      var waypoint = new Waypoint({
+        element: $(this),
+        handler: function () {
+          counterUp(counter, {
+            duration: 1200,
+            delay: 16,
+          });
+          this.destroy();
+        },
+        offset: "bottom-in-view",
+      });
+    });
+  });
+});
 
 // const el = document.querySelector( '.counter' )
 // new Waypoint( {
 //     element: el,
-//     handler: function() { 
+//     handler: function() {
 //       // alert('You have scrolled to a thing')
 
-//         counterUp( el ) 
+//         counterUp( el )
 //         this.destroy()
 //     },
 //     offset: 'bottom-in-view',
 // } )
-
 
 // const counterUp = window.counterUp.default
 
@@ -182,25 +173,23 @@ $( document ).ready( function() {
 
 // const el = document.querySelector( '.counter' )
 // IO.observe( el )
-// scroll animation 
-
+// scroll animation
 
 /* TYPING ANIMATION */
-var typed = new Typed('#typing-text', {
-  strings: ['ARCHITECTURE', 'LANDSCAPING','STRUCUTURE','INTERIORS'],
+var typed = new Typed("#typing-text", {
+  strings: ["ARCHITECTURE", "LANDSCAPING", "STRUCUTURE", "INTERIORS"],
   typeSpeed: 110,
   startDelay: 1000,
   fadeOut: true,
-  fadeOutClass: 'typed-fade-out',
+  fadeOutClass: "typed-fade-out",
   fadeOutDelay: 1400,
   showCursor: true,
-  cursorChar: '|',
+  cursorChar: "|",
   shuffle: true,
   loop: true,
   loopCount: Infinity,
   // autoInsertCss: true,
 });
-
 
 /* AUTHOR LINK */
 $(".about-me-img").hover(
@@ -244,3 +233,30 @@ faq.addEventListener("click", (event) => {
     question.setAttribute("aria-expanded", "true");
   }
 });
+
+
+// let calcScrollValue = () => {
+
+//   let scrollProgress = document.getElementById("progress");
+//   let progressValue = document.getElementById("progress-value");
+//   let pos = document.documentElement.scrollTop;
+//   console.log(pos);
+//   let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//   // console.log(calcHeight);
+//   let scrollValue = Math.round((pos * 100) / calcHeight);
+//   // console.log(scrollValue);//changing in scale of 100
+//   if (pos > 100) {
+//       scrollProgress.style.display = "grid";
+//   } else {
+//       scrollProgress.style.display = "none";
+
+//   }
+//   scrollProgress.addEventListener("click", () => {
+//       document.documentElement.scrollTop = 0;
+//   });
+//   // scrollProgress.style.background = 'conic-gradient(#ff0000 '+scrollValue+'%, #ffffff '+scrollValue+'%)';
+//   scrollProgress.style.background = `conic-gradient(#1CA4B0 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+// };
+
+// window.onscroll = calcScrollValue;
+// window.onload = calcScrollValue;

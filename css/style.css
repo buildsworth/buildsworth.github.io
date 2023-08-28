@@ -142,7 +142,7 @@ body {
   min-width: 10px;
 }
 
-#br_id{
+#br_id {
   display: none;
 }
 
@@ -375,6 +375,34 @@ body {
 }
 /* FAQ ENDS  */
 
+#whatsapp_opener {
+  background-color: #136d34;
+
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  z-index: 1000;
+
+  
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+  /* box-shadow: 2px 1px 1px 0.3px #09af17; */
+
+  cursor: pointer;
+}
+
+#whatsapp_opener i {
+  /* animation: fadeIn 0.3s ease-in-out forwards; */
+  font-size: 50px;
+  color: whitesmoke;
+}
+
 /* <========== RESPONSIVE MOBILE DESIGN ==========>  */
 @media screen and (max-width: 1024px) {
   /* SERVICES START  */
@@ -417,10 +445,10 @@ body {
     max-width: 500px;
   }
 
-  #br_id{
+  #br_id {
     display: inline;
   }
- 
+
   .text p {
     font-size: 0.9em;
   }
@@ -438,5 +466,17 @@ body {
 
   .carousel {
     width: 300px;
+  }
+
+  #whatsapp_opener {
+    bottom: 25px;
+    right: 25px;
+
+    height: 50px;
+    width: 50px;
+  }
+
+  #whatsapp_opener i {
+    font-size: 33px;
   }
 }

@@ -49,7 +49,6 @@ nav a {
   color: rgb(95, 91, 91);
 }
 
-
 .burger {
   display: none;
   cursor: pointer;
@@ -105,8 +104,8 @@ a:is(:visited, :active) {
   justify-content: center;
 }
 
-#div-id i{
-  font-size: 40px;
+#div-id i {
+  font-size: 35px;
   /* text-align: center; */
   color: rgb(95, 91, 91);
 }
@@ -150,8 +149,8 @@ a:is(:visited, :active) {
     display: block;
   }
 
-  #div-id i{
-    font-size: 35px;
+  #div-id i {
+    font-size: 30px;
   }
 }
 

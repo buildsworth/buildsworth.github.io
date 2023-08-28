@@ -19,6 +19,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/burger.css">
@@ -68,7 +69,7 @@
                 <a href="#" class="link">Home</a>
                 <a href="#services-section" class="link">Services</a>
                 <a href="#about_section" class="link">About Us</a>
-                <a href="#enquiry_section" class="link">Enquiry</a>
+                <a href="#enquiry_form" class="link">Enquiry</a>
             </div>
         </div>
         <div class="menu menu-right">
@@ -125,7 +126,7 @@
             <h1 class="heading">About Us</h1>
             <!-- <span class="headerLine" style="text-align: center;"></span> -->
         </div>
-        
+
         <h3 class="sub-heading">Why choose Us? </h3>
 
         <div class="row">
@@ -817,10 +818,10 @@
     <!-- FAQ Start -->
 
     <section class="section section-faq">
-        <div class="heading-container">
+        <!-- <div class="heading-container">
             <h2 class="heading">FAQ</h2>
             <span class="headerLine"></span>
-        </div>
+        </div> -->
 
         <div class="container" aria-label="Frequently Asked Questions">
             <section class="faq">
@@ -917,7 +918,7 @@
             <div><i class="fa-solid fa-phone"></i>+91 9304019860</div>
             <div><i class="fa-solid fa-clock"></i>Mon-Fri 8:00 AM to 5:00 PM</div>
         </div>
-        <div class="contact-form">
+        <div class="contact-form" id="enquiry_form">
             <h2>Contact Us</h2>
             <form class="contact" action="" method="post">
                 <input type="text" name="name" class="text-box" placeholder="Your Name" required>
@@ -969,6 +970,12 @@
             <p>copyright &copy;2023 BuildsWorth. <br>Made with <span>love 💓</span></p>
         </div>
     </footer>
+
+    <div id="whatsapp_opener" class="animate__animated animate__headShake">
+        <a href="https://wa.me/9304019860?text=" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
