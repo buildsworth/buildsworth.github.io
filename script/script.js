@@ -184,6 +184,24 @@ $( document ).ready( function() {
 // IO.observe( el )
 // scroll animation 
 
+
+/* TYPING ANIMATION */
+var typed = new Typed('#typing-text', {
+  strings: ['ARCHITECTURE', 'LANDSCAPING','STRUCUTURE','INTERIORS'],
+  typeSpeed: 110,
+  startDelay: 1000,
+  fadeOut: true,
+  fadeOutClass: 'typed-fade-out',
+  fadeOutDelay: 1400,
+  showCursor: true,
+  cursorChar: '|',
+  shuffle: true,
+  loop: true,
+  loopCount: Infinity,
+  // autoInsertCss: true,
+});
+
+
 /* AUTHOR LINK */
 $(".about-me-img").hover(
   function () {

@@ -9,20 +9,18 @@
   margin-bottom: 70px;
   position: relative;
   width: 100%;
-  /* height: 100vh; */
-  /* background: radial-gradient(#281c3e, #0f051d); */
-  /* background: #fff; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+
 .team-content {
   width: 100%;
   max-width: 1350px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
   align-items: center;
   gap: 2rem;
   text-align: center;
@@ -57,13 +55,13 @@
   transition: all 0.38s ease;
 }
 .box h3 {
-  font-size: 23px;
+  font-size: 15px;
   font-weight: 600;
   color: #fff;
   margin-bottom: 8px;
 }
 .box h5 {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   color: #b7b4bb;
   margin-bottom: 15px;

@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -31,9 +33,9 @@ body {
   /* background: #0f051d; */
   background: radial-gradient(#281c3e, #0f051d);
   /* background: #0f051d; */
-
   /* background: #0d1117; */
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  font-family: "Nunito", "Poppins", sans-serif;
 }
 
 .fa-solid {
@@ -121,20 +123,27 @@ body {
 }
 
 .text h3 {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 600;
   line-height: 1.3em;
   text-transform: uppercase;
-  max-width: 800px;
+  max-width: 750px;
 }
-
-
 
 .text p {
   font-size: 1.1em;
   margin: 20px 0;
   font-weight: 400;
   max-width: 680px;
+}
+.text span {
+  color: #33ffbb;
+  display: inline-block;
+  min-width: 10px;
+}
+
+#br_id{
+  display: none;
 }
 
 .text a {
@@ -164,11 +173,6 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
-}
-
-.text span {
-  font-size: 1.1em;
-  color: #33ffbb;
 }
 
 .social {
@@ -409,9 +413,14 @@ body {
   }
 
   .text h3 {
-    font-size: 2em;
+    font-size: 1.7em;
+    max-width: 500px;
   }
 
+  #br_id{
+    display: inline;
+  }
+ 
   .text p {
     font-size: 0.9em;
   }
