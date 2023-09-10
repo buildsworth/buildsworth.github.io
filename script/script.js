@@ -177,7 +177,7 @@ $(document).ready(function () {
 
 /* TYPING ANIMATION */
 var typed = new Typed("#typing-text", {
-  strings: ["ARCHITECTURE", "LANDSCAPING", "STRUCUTURE", "INTERIORS"],
+  strings: ["ARCHITECTURE", "LANDSCAPING", "STRUCTURE", "INTERIORS"],
   typeSpeed: 110,
   startDelay: 1000,
   fadeOut: true,

@@ -1,6 +1,6 @@
 /* Demo styles end */
 .carousel {
-  width: 42vw;
+  width: 50vw;
 }
 
 .swiper-figure {
@@ -93,5 +93,6 @@
 @media screen and (max-width: 768px) {
   .carousel {
     width: 90vw;
+    height: 450px;
   }
 }

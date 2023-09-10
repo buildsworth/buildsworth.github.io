@@ -32,6 +32,7 @@ body {
   /* background: #0A192F; */
   /* background: #0f051d; */
   background: radial-gradient(#281c3e, #0f051d);
+  /* background: #080808; */
   /* background: #0f051d; */
   /* background: #0d1117; */
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
@@ -230,7 +231,7 @@ body {
   text-align: center;
 }
 
-/* SERVICES START  */
+/* <=========== SERVICES START ===========> */
 .services {
   margin-bottom: 70px;
   display: flex;
@@ -254,7 +255,7 @@ body {
 }
 
 .text-container {
-  width: 50%;
+  width: 40%;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
@@ -271,6 +272,7 @@ body {
 .text-container p {
   color: #8892b0;
   font-size: 20px;
+  margin: 0 20px;
 }
 
 .text-container strong {
@@ -376,8 +378,8 @@ body {
 /* FAQ ENDS  */
 
 #whatsapp_opener {
-  background-color: #136d34;
-  /* background-color: #25D366; */
+  /* background-color: #dde9e1; */
+  /* background-color: #d7e6dc; */
 
   position: fixed;
   bottom: 30px;
@@ -387,21 +389,33 @@ body {
   border-radius: 50%;
   z-index: 1000;
 
-  
   /* display: flex; */
   justify-content: center;
   align-items: center;
 
   display: none;
   /* box-shadow: 2px 1px 1px 0.3px #09af17; */
-
   cursor: pointer;
 }
 
 #whatsapp_opener i {
-  /* animation: fadeIn 0.3s ease-in-out forwards; */
   font-size: 50px;
-  color: whitesmoke;
+  color: rgb(43, 219, 102);
+}
+
+#whatsapp_opener img {
+  /* animation: fadeIn 0.3s ease-in-out forwards; */
+  /* font-size: 50px;
+  color: whitesmoke; */
+  /* background-color: #dde9e1; */
+
+  height: 70px;
+  width: 70px;
+
+  /* fill: green;
+  fill-opacity: 0.5; */
+  /* filter: color-burn(green); */
+  color: white;
 }
 
 /* <========== RESPONSIVE MOBILE DESIGN ==========>  */
@@ -426,6 +440,10 @@ body {
     width: 100%;
   }
 
+  .text-container p {
+    margin: 0 5px;
+  }
+
   .img-container {
     width: 100%;
   }
@@ -436,6 +454,16 @@ body {
   /* SERVICES END */
 }
 
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center h1{
+  margin-bottom: 10px;
+}
 @media screen and (max-width: 768px) {
   .showcase {
     padding: 40px;
@@ -477,7 +505,12 @@ body {
     width: 50px;
   }
 
-  #whatsapp_opener i {
-    font-size: 33px;
+  #whatsapp_opener img {
+    height: 50px;
+    width: 50px;
   }
+
+  /* #whatsapp_opener i {
+    font-size: 33px;
+  } */
 }
