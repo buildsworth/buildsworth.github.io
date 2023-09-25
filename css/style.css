@@ -1,4 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"); */
+/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap");
 
 * {
@@ -37,6 +38,17 @@ body {
   /* background: #0d1117; */
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   font-family: "Nunito", "Poppins", sans-serif;
+}
+
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center h1{
+  margin-bottom: 10px;
 }
 
 .fa-solid {
@@ -250,7 +262,7 @@ body {
 
 .row-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -272,7 +284,7 @@ body {
 .text-container p {
   color: #8892b0;
   font-size: 20px;
-  margin: 0 20px;
+  /* margin: 0 20px; */
 }
 
 .text-container strong {
@@ -374,6 +386,7 @@ body {
 }
 .faq__answer-text {
   padding: 0 16px 16px;
+  max-width: 70vw;
 }
 /* FAQ ENDS  */
 
@@ -454,16 +467,7 @@ body {
   /* SERVICES END */
 }
 
-.center{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-.center h1{
-  margin-bottom: 10px;
-}
 @media screen and (max-width: 768px) {
   .showcase {
     padding: 40px;
