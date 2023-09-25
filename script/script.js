@@ -14,7 +14,7 @@ document.addEventListener("scroll", () => {
     document.documentElement.clientHeight;
   // console.log(calcHeight);
   let scrollValue = Math.round((pos * 100) / calcHeight);
-  console.log(scrollValue);
+  // console.log(scrollValue);
 
   if(scrollValue > 11){
     whatsappOpenner.style.display = "grid";

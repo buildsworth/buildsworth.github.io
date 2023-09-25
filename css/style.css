@@ -40,14 +40,16 @@ body {
   font-family: "Nunito", "Poppins", sans-serif;
 }
 
-.center{
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+.center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.center h1{
+.center h1 {
   margin-bottom: 10px;
 }
 
@@ -55,9 +57,7 @@ body {
   color: #2ad39f;
 }
 
-/* -------------------------------- */
-/* ************ NAVBAR **************/
-/* -------------------------------- */
+/*=============== HEADER & NAV ===============*/
 
 /* navbar linke highlighting  */
 .link {
@@ -113,7 +113,6 @@ body {
   opacity: 0.9;
 }
 
-/* ====Overlay on the video =====*/
 .overlay {
   position: absolute;
   top: 0;
@@ -188,6 +187,11 @@ body {
   transform: scale(1.05);
 }
 
+.sparkle {
+  display: inline-block;
+  width: 30px;
+}
+
 .social {
   position: absolute;
   bottom: 20px;
@@ -243,6 +247,77 @@ body {
   text-align: center;
 }
 
+/*=============== ABOUT US ===============*/
+.about {
+  padding: 150px;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.about {
+  /* background-color: #ffffff; */
+  width: 100vw;
+  padding: 50px 100px;
+  margin-bottom: 20px;
+  color: #ccd6f6;
+}
+
+.image {
+  /* width: 40%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  filter: invert(70%);
+  width: 100%;
+  min-width: 300px;
+  height: auto;
+  /* width: 400px; */
+}
+
+.contents {
+  padding: 20px;
+}
+
+.contents h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  /* text-align: right; */
+}
+
+#about-para-1 {
+  color: #8892b0;
+}
+
+#about-para-2 {
+  /* font-weight: 400;
+    text-align: left; */
+  line-height: 1.5;
+}
+.icons {
+  display: inline;
+}
+
+/* .icons i{
+  color: #17ffb2;
+} */
+
+.icons-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
 /* <=========== SERVICES START ===========> */
 .services {
   margin-bottom: 70px;
@@ -256,7 +331,7 @@ body {
 .service-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 40px 50px;
+  margin: 40px 40px;
   gap: 100px;
 }
 
@@ -467,7 +542,6 @@ body {
   /* SERVICES END */
 }
 
-
 @media screen and (max-width: 768px) {
   .showcase {
     padding: 40px;
@@ -493,9 +567,35 @@ body {
     border-radius: 3px;
   }
 
+  .sparkle {
+    width: 20px;
+  }
+
   .social li a {
     margin-bottom: 80px;
   }
+
+  /* SERVICES START  */
+  .about {
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+
+  .image img {
+    min-width: 0px;
+    width: 45%;
+  }
+
+  .row {
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+  }
+
+  .icons-container {
+    gap: 10px;
+  }
+
+  /* CAROUSEL START  */
 
   .carousel {
     width: 300px;
