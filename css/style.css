@@ -344,8 +344,8 @@ body {
 .text-container {
   width: 40%;
   text-align: justify;
-  hyphens: auto;
   -webkit-hyphens: auto;
+  hyphens: auto;
   word-spacing: -0.05em;
 }
 
@@ -376,8 +376,8 @@ body {
   }
   .text-container p {
     text-align: justify;
-    hyphens: auto;
     -webkit-hyphens: auto;
+    hyphens: auto;
     word-spacing: -0.05em;
   }
 
