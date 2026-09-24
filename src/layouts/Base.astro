@@ -1,0 +1,147 @@
+---
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/outfit";
+import "../styles/global.css";
+import { faqs, services, site } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  robots?: string;
+}
+
+const { title = site.title, description = site.description, robots = "index, follow" } = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const ogImage = new URL("/og.png", site.url).href;
+const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "";
+const business = {
+  "@type": ["GeneralContractor", "HomeAndConstructionBusiness"],
+  "@id": `${site.url}/#studio`,
+  name: site.name,
+  url: site.url,
+  telephone: site.phoneTel,
+  email: site.email,
+  image: ogImage,
+  logo: new URL("/brand/logo.png", site.url).href,
+  description: site.description,
+  hasMap: site.maps,
+  sameAs: [site.instagram],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Lane No. 6, Jay Prakash Nagar, Jharudih",
+    addressLocality: "Dhanbad",
+    addressRegion: "Jharkhand",
+    postalCode: "826007",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: site.geo.latitude,
+    longitude: site.geo.longitude,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+  },
+  areaServed: [
+    { "@type": "City", name: "Dhanbad" },
+    { "@type": "State", name: "Jharkhand" },
+  ],
+  knowsAbout: services.map((item) => item.title),
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Design and construction",
+    itemListElement: services.map((item) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: item.title,
+        description: item.text,
+        areaServed: "Dhanbad, Jharkhand",
+      },
+    })),
+  },
+};
+const website = {
+  "@type": "WebSite",
+  "@id": `${site.url}/#website`,
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  inLanguage: "en-IN",
+  publisher: { "@id": `${site.url}/#studio` },
+};
+const graph = isHome
+  ? [
+      website,
+      business,
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a.replace(/\n+/g, " ").trim(),
+          },
+        })),
+      },
+    ]
+  : [website, business];
+const jsonLd = { "@context": "https://schema.org", "@graph": graph };
+---
+
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="theme-color" content="#143528" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="BuildsWorth — Architecture · Structure · Interiors · Landscaping" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="BuildsWorth — Architecture · Structure · Interiors · Landscaping" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <slot />
+    <script>
+      const nodes = document.querySelectorAll<HTMLElement>("[data-reveal]");
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        nodes.forEach((node) => node.classList.add("is-in"));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              entry.target.classList.add("is-in");
+              observer.unobserve(entry.target);
+            }
+          },
+          { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
+        );
+        nodes.forEach((node) => observer.observe(node));
+      }
+    </script>
+  </body>
+</html>

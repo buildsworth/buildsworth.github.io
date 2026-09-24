@@ -1,0 +1,405 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Gallery from "../components/Gallery";
+import media from "../data/media.json";
+import {
+  associates,
+  clientele,
+  faqs,
+  projectTypes,
+  services,
+  site,
+  stats,
+  steps,
+  team,
+} from "../data/site";
+
+const portraits = Object.fromEntries(media.people.map((person) => [person.id, person]));
+---
+
+<Base>
+  <Header />
+  <main id="main">
+    <section class="hero">
+      <video
+        class="hero__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster={media.hero.src}
+      >
+        <source src="/video/showcase.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <h1>From design to construction.</h1>
+        <p>Homes, workplaces, and landscapes. One studio, from the drawing to the handover.</p>
+      </div>
+      <nav class="hero__rail" aria-label="What we do">
+        {
+          services.map((item, index) => (
+            <a href="#services">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {item.title}
+            </a>
+          ))
+        }
+      </nav>
+    </section>
+
+    <section class="stats" aria-label="Studio in numbers">
+      {
+        stats.map((item, index) => (
+          <div class="stat" data-reveal style={`--reveal:${index * 80}ms`}>
+            <strong data-count={item.value}>{item.value}</strong>
+            {item.unit && <small>{item.unit}</small>}
+            <span>{item.label}</span>
+          </div>
+        ))
+      }
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects, up close.</h2>
+          <p class="lede">Architecture, structure, interiors, and landscape. Open any photo to look through the set.</p>
+        </div>
+        <div data-reveal>
+          <Gallery client:visible slides={media.work} />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Services</p>
+          <h2>What we take on.</h2>
+        </div>
+        <div class="services">
+          {
+            services.map((item, index) => (
+              <article class="service" data-reveal style={`--reveal:${index * 70}ms`}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">How it works</p>
+          <h2>A clear path from brief to keys.</h2>
+        </div>
+        <div class="steps">
+          {
+            steps.map((item, index) => (
+              <article class="step" data-reveal style={`--reveal:${index * 70}ms`}>
+                <span>{item.n}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="studio">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Our Team</p>
+          <h2>The people on your project.</h2>
+        </div>
+        <div class="people">
+          {
+            team.map((person, index) => {
+              const photo = portraits[person.id];
+              return (
+                <article class="person" data-reveal style={`--reveal:${index * 50}ms`}>
+                  {photo && (
+                    <span class="person__media">
+                      <img
+                        src={photo.src}
+                        alt={`${person.name}, ${person.role} at BuildsWorth`}
+                        width={photo.width}
+                        height={photo.height}
+                        loading="lazy"
+                      />
+                    </span>
+                  )}
+                  <h3>{person.name}</h3>
+                  <p>
+                    {person.role}
+                    {person.cred ? ` · ${person.cred}` : ""}
+                  </p>
+                </article>
+              );
+            })
+          }
+        </div>
+        <div class="associates">
+          <p class="eyebrow">Associates</p>
+          <div class="people">
+            {
+              associates.map((person, index) => {
+                const photo = portraits[person.id];
+                return (
+                  <article class:list={["person", { "person--logo": person.logo }]} data-reveal style={`--reveal:${index * 50}ms`}>
+                    {photo && (
+                      <span class="person__media">
+                        <img
+                          src={photo.src}
+                          alt={person.logo ? `${person.name} logo` : `${person.name}, ${person.role} at BuildsWorth`}
+                          width={photo.width}
+                          height={photo.height}
+                          loading="lazy"
+                        />
+                      </span>
+                    )}
+                    <h3>{person.name}</h3>
+                    <p>{person.role}</p>
+                  </article>
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section clientele" id="clientele">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Clientele</p>
+          <h2>Who we build for.</h2>
+        </div>
+        <ul class="logo-grid">
+          {
+            clientele.map((item) => (
+              <li data-reveal>
+                <img src={item.src} alt={item.name} width="160" height="160" />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Questions</p>
+          <h2>Before you write to us.</h2>
+        </div>
+        <div class="faq">
+          {
+            faqs.map((item) => (
+              <details>
+                <summary>{item.q}</summary>
+                <div class="faq-panel">
+                  <div>
+                    {item.a.split("\n\n").map((para) => (
+                      <p>{para}</p>
+                    ))}
+                  </div>
+                </div>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="enquiry">
+      <div class="wrap">
+        <div class="enquiry">
+          <div data-reveal>
+            <p class="eyebrow">Enquiry</p>
+            <h2>Tell us about the project.</h2>
+            <p class="lede">We reply with a time to talk. The first conversation is free.</p>
+            <div class="contact-list">
+              <a class="contact-row" href={site.maps} target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"></path>
+                </svg>
+                <span>{site.addressLines[0]}<br />{site.addressLines[1]}</span>
+              </a>
+              <a class="contact-row" href={`tel:${site.phoneTel}`}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1L6.6 10.8z"></path>
+                </svg>
+                <span>{site.phoneDisplay}</span>
+              </a>
+              <a class="contact-row" href={`mailto:${site.email}`}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"></path>
+                </svg>
+                <span>{site.email}</span>
+              </a>
+              <p class="contact-row">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12 2a10 10 0 1 0 .01 0zM12 4a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-.75 3.5V12l3.4 2.04.75-1.23-2.65-1.6V7.5z"></path>
+                </svg>
+                <span>{site.hours}</span>
+              </p>
+            </div>
+          </div>
+          <form name="enquiry" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" data-reveal style="--reveal:80ms">
+            <input type="hidden" name="form-name" value="enquiry" />
+            <p class="hp" aria-hidden="true">
+              <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+            </p>
+            <label class="field">
+              <span>Name</span>
+              <input name="name" type="text" autocomplete="name" required />
+            </label>
+            <label class="field">
+              <span>Phone</span>
+              <input name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input name="email" type="email" autocomplete="email" />
+            </label>
+            <div class="field">
+              <span id="project-label">Project type</span>
+              <div class="picker" data-picker>
+                <input type="hidden" name="project" value="" data-picker-value />
+                <button
+                  type="button"
+                  class="picker__btn"
+                  data-picker-btn
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-labelledby="project-label"
+                >
+                  <span data-picker-label>Select</span>
+                </button>
+                <ul class="picker__menu" data-picker-menu role="listbox" hidden>
+                  {
+                    projectTypes.map((type) => (
+                      <li>
+                        <button type="button" role="option" data-value={type} aria-selected="false">
+                          {type}
+                        </button>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+            <label class="field">
+              <span>Location</span>
+              <input name="location" type="text" autocomplete="address-level2" />
+            </label>
+            <label class="field">
+              <span>Area in sq.ft</span>
+              <input name="area" type="text" inputmode="numeric" />
+            </label>
+            <label class="field">
+              <span>Message</span>
+              <textarea name="message" required></textarea>
+            </label>
+            <button class="btn btn--solid" type="submit">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 2 11 13" />
+                <path d="M22 2 15 22l-4-9-9-4 20-7Z" />
+              </svg>
+              Send enquiry
+            </button>
+            <p class="form-note">
+              We use this only to reply. See <a href="/privacy">privacy</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <script>
+    document.querySelectorAll<HTMLElement>("[data-picker]").forEach((root) => {
+      const button = root.querySelector<HTMLButtonElement>("[data-picker-btn]");
+      const menu = root.querySelector<HTMLElement>("[data-picker-menu]");
+      const label = root.querySelector<HTMLElement>("[data-picker-label]");
+      const input = root.querySelector<HTMLInputElement>("[data-picker-value]");
+      const options = [...root.querySelectorAll<HTMLButtonElement>("[data-value]")];
+      if (!button || !menu || !label || !input) return;
+
+      const close = () => {
+        menu.hidden = true;
+        button.setAttribute("aria-expanded", "false");
+      };
+
+      button.addEventListener("click", () => {
+        const open = menu.hidden;
+        menu.hidden = !open;
+        button.setAttribute("aria-expanded", String(open));
+      });
+
+      options.forEach((option) => {
+        option.addEventListener("click", () => {
+          input.value = option.dataset.value ?? "";
+          label.textContent = option.textContent;
+          options.forEach((item) => item.setAttribute("aria-selected", String(item === option)));
+          close();
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!root.contains(event.target as Node)) close();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") close();
+      });
+    });
+
+    const counters = [...document.querySelectorAll<HTMLElement>("[data-count]")];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduceMotion && counters.length) {
+      const run = (el: HTMLElement) => {
+        const target = Number(el.dataset.count);
+        const start = performance.now();
+        const duration = 1400;
+        const tick = (now: number) => {
+          const progress = Math.min(1, (now - start) / duration);
+          const eased = 1 - (1 - progress) ** 3;
+          el.textContent = String(Math.round(target * eased));
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        el.textContent = "0";
+        requestAnimationFrame(tick);
+      };
+      const seen = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            run(entry.target as HTMLElement);
+            seen.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.5 },
+      );
+      counters.forEach((el) => seen.observe(el));
+    }
+
+    const faqItems = [...document.querySelectorAll<HTMLDetailsElement>(".faq details")];
+    faqItems.forEach((details) => {
+      details.addEventListener("toggle", () => {
+        if (!details.open) return;
+        faqItems.forEach((other) => {
+          if (other !== details) other.open = false;
+        });
+      });
+    });
+  </script>
+</Base>

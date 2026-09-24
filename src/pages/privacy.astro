@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+---
+
+<Base title="Privacy — BuildsWorth" description="How BuildsWorth uses the details you send through the enquiry form.">
+  <Header />
+  <main id="main" class="page">
+    <div class="wrap prose">
+      <p class="eyebrow">Privacy</p>
+      <h1>What we keep.</h1>
+      <p>
+        The enquiry form asks for your name, phone number, and anything you choose to add: email, project type, location, area, and a message.
+        We use that only to reply about your project.
+      </p>
+      <p>
+        Submissions are stored with our site host, Netlify, and emailed to {site.email}. We do not sell this information.
+      </p>
+      <p>To ask for a copy or deletion, email {site.email} or call {site.phoneDisplay}.</p>
+      <p><a href="/">Back home</a></p>
+    </div>
+  </main>
+  <Footer />
+</Base>

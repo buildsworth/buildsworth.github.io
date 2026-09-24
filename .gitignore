@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.astro/
+public/media/
+public/brand/
+public/video/
+src/data/media.json
+
+# Pre-cutout portrait backups (re-run scripts/cutout-portraits.py from these)
+resource/img/teams-original/
+resource/img/associates-original/
+
+# Local / OS junk
+.DS_Store
+Thumbs.db
+*.log
+__pycache__/
+.venv/

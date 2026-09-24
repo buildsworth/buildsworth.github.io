@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+---
+
+<Base title="Enquiry sent — BuildsWorth" description="Your enquiry is with BuildsWorth. We will reply shortly." robots="noindex, follow">
+  <Header />
+  <main id="main" class="page">
+    <div class="wrap prose">
+      <p class="eyebrow">Enquiry</p>
+      <h1>We have it.</h1>
+      <p>Thanks for writing. Someone from the studio will get back to you. If it is urgent, call or WhatsApp {site.phoneDisplay}.</p>
+      <div class="actions">
+        <a class="btn btn--solid" href="/">Back home</a>
+        <a class="btn btn--line" href={site.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

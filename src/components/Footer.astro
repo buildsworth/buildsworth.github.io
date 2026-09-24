@@ -1,0 +1,122 @@
+---
+import { site } from "../data/site";
+const year = new Date().getFullYear();
+---
+
+<section class="studio-map" aria-label="Studio location">
+  <iframe
+    title="BuildsWorth, Lane No. 6, Jay Prakash Nagar, Jharudih, Dhanbad"
+    src={site.mapEmbed}
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen
+  ></iframe>
+  <a class="studio-map__card" href={site.maps} target="_blank" rel="noopener noreferrer">
+    <span>
+      <svg class="studio-map__pin" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"></path>
+      </svg>
+      Visit
+    </span>
+    <strong>{site.addressLines[0]}</strong>
+    <em>{site.addressLines[1]}</em>
+  </a>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <img src="/brand/logo.png" alt="BuildsWorth" width="140" height="56" />
+      <p>Architecture, structure, interiors, and landscape. From the first drawing through handover.</p>
+      <a class="btn btn--quote" href="#enquiry">Request a quote</a>
+    </div>
+    <div>
+      <p class="footer-label">Visit</p>
+      <a class="footer-row footer-row--top" href={site.maps} target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"></path>
+        </svg>
+        <address>
+          {site.addressLines.map((line) => <span>{line}</span>)}
+        </address>
+      </a>
+      <p class="footer-row footer-row--top footer-meta">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M12 2a10 10 0 1 0 .01 0zM12 4a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-.75 3.5V12l3.4 2.04.75-1.23-2.65-1.6V7.5z"></path>
+        </svg>
+        <span>
+          {site.hours.split(", ")[0]}<br />{site.hours.split(", ").slice(1).join(", ")}
+        </span>
+      </p>
+    </div>
+    <div>
+      <p class="footer-label">Talk</p>
+      <a class="footer-row" href={`tel:${site.phoneTel}`}>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1L6.6 10.8z"></path>
+        </svg>
+        <span>{site.phoneDisplay}</span>
+      </a>
+      <a class="footer-row" href={`mailto:${site.email}`}>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"></path>
+        </svg>
+        <span>{site.email}</span>
+      </a>
+      <a class="footer-row" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 360 362" aria-hidden="true">
+          <path fill="currentColor" d="M307.5 52.6C273.7 18.7 228.7 0 180.8 0 82 0 1.5 80.4 1.5 179.2c0 31.6 8.3 62.4 23.9 89.6L0 361.7l95-24.9c26.2 14.3 55.7 21.8 85.7 21.8h.1c98.8 0 179.2-80.4 179.2-179.2 0-47.9-18.6-92.9-52.5-126.8zM180.8 328.4h-.1c-26.7 0-53-7.2-75.8-20.8l-5.4-3.2-56.4 14.8 15-55-3.5-5.6c-14.9-23.7-22.8-51.1-22.8-79.3 0-82.1 66.9-149 149-149 39.8 0 77.2 15.5 105.3 43.7 28.1 28.2 43.6 65.6 43.6 105.4 0 82.1-66.8 149-149 149zm81.7-111.6c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.2 17.6-2.6 3-5.2 3.3-9.7 1.1-4.5-2.2-18.9-7-36-22.2-13.3-11.9-22.3-26.5-24.9-31-2.6-4.5-.3-6.9 2-9.1 2-2 4.5-5.2 6.7-7.9 2.2-2.6 3-4.5 4.5-7.4 1.5-3 .7-5.6-.4-7.8-1.1-2.2-10.1-24.3-13.8-33.2-3.6-8.7-7.3-7.5-10.1-7.7-2.6-.1-5.6-.1-8.6-.1-3 0-7.8 1.1-12 5.6-4.1 4.5-15.7 15.3-15.7 37.4s16 43.3 18.3 46.3c2.2 3 31.6 48.2 76.5 67.6 10.7 4.6 19 7.4 25.5 9.4 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.5 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"></path>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+      <a class="footer-row" href={site.instagram} target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.2A4.8 4.8 0 1 0 16.8 12 4.8 4.8 0 0 0 12 7.2zm6.3-1.4a1.15 1.15 0 1 0 1.15 1.15A1.15 1.15 0 0 0 18.3 5.8zM12 9a3 3 0 1 1-3 3 3 3 0 0 1 3-3z"></path>
+        </svg>
+        <span>Instagram</span>
+      </a>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <p class="footer-label">Explore</p>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#clientele">Clientele</a>
+      <a href="#studio">Our Team</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© {year} BuildsWorth</p>
+    <p>Dhanbad, Jharkhand</p>
+  </div>
+</footer>
+
+<a class="wa-float" href={site.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" aria-hidden="true" tabindex="-1" data-wa-float>
+  <svg viewBox="0 0 360 362" aria-hidden="true">
+    <path
+      fill="currentColor"
+      d="M307.5 52.6C273.7 18.7 228.7 0 180.8 0 82 0 1.5 80.4 1.5 179.2c0 31.6 8.3 62.4 23.9 89.6L0 361.7l95-24.9c26.2 14.3 55.7 21.8 85.7 21.8h.1c98.8 0 179.2-80.4 179.2-179.2 0-47.9-18.6-92.9-52.5-126.8zM180.8 328.4h-.1c-26.7 0-53-7.2-75.8-20.8l-5.4-3.2-56.4 14.8 15-55-3.5-5.6c-14.9-23.7-22.8-51.1-22.8-79.3 0-82.1 66.9-149 149-149 39.8 0 77.2 15.5 105.3 43.7 28.1 28.2 43.6 65.6 43.6 105.4 0 82.1-66.8 149-149 149zm81.7-111.6c-4.5-2.2-26.5-13.1-30.6-14.6-4.1-1.5-7.1-2.2-10.1 2.2-3 4.5-11.6 14.6-14.2 17.6-2.6 3-5.2 3.3-9.7 1.1-4.5-2.2-18.9-7-36-22.2-13.3-11.9-22.3-26.5-24.9-31-2.6-4.5-.3-6.9 2-9.1 2-2 4.5-5.2 6.7-7.9 2.2-2.6 3-4.5 4.5-7.4 1.5-3 .7-5.6-.4-7.8-1.1-2.2-10.1-24.3-13.8-33.2-3.6-8.7-7.3-7.5-10.1-7.7-2.6-.1-5.6-.1-8.6-.1-3 0-7.8 1.1-12 5.6-4.1 4.5-15.7 15.3-15.7 37.4s16 43.3 18.3 46.3c2.2 3 31.6 48.2 76.5 67.6 10.7 4.6 19 7.4 25.5 9.4 10.7 3.4 20.5 2.9 28.2 1.8 8.6-1.3 26.5-10.8 30.2-21.3 3.7-10.5 3.7-19.4 2.6-21.3-1.1-1.8-4.1-3-8.6-5.2z"
+    ></path>
+  </svg>
+</a>
+
+<script>
+  const float = document.querySelector<HTMLAnchorElement>("[data-wa-float]");
+  const showAfter = 420;
+
+  const onScroll = () => {
+    const show = window.scrollY > showAfter;
+    float?.classList.toggle("is-visible", show);
+    if (!float) return;
+    if (show) {
+      float.removeAttribute("tabindex");
+      float.removeAttribute("aria-hidden");
+    } else {
+      float.setAttribute("tabindex", "-1");
+      float.setAttribute("aria-hidden", "true");
+    }
+  };
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+</script>

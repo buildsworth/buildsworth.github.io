@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+---
+
+<Base title="Page not found — BuildsWorth" description="This page is not on the BuildsWorth site." robots="noindex, follow">
+  <Header />
+  <main id="main" class="page">
+    <div class="wrap prose">
+      <p class="eyebrow">404</p>
+      <h1>That page is not here.</h1>
+      <p>The studio is. Call {site.phoneDisplay} or go back to the homepage.</p>
+      <a class="btn btn--solid" href="/">Back home</a>
+    </div>
+  </main>
+  <Footer />
+</Base>
