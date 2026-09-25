@@ -1294,6 +1294,7 @@ textarea:focus-visible {
   height: min(20rem, 46vh);
   width: 100%;
   background: #d7d2c8;
+  overflow: hidden;
 }
 
 .studio-map iframe {
@@ -1301,12 +1302,23 @@ textarea:focus-visible {
   height: 100%;
   border: 0;
   display: block;
+  filter: grayscale(1) contrast(0.98) brightness(1.08);
+}
+
+.studio-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 14, 13, 0.04);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .studio-map__card {
   position: absolute;
   left: 1.15rem;
   bottom: 1.15rem;
+  z-index: 2;
   display: grid;
   gap: 0.15rem;
   max-width: min(22rem, calc(100% - 2.4rem));
