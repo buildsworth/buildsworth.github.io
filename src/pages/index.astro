@@ -2,9 +2,10 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Gallery from "../components/Gallery";
+import Services from "../components/Services";
 import media from "../data/media.json";
 import {
+  about,
   associates,
   clientele,
   faqs,
@@ -41,7 +42,7 @@ const portraits = Object.fromEntries(media.people.map((person) => [person.id, pe
       <nav class="hero__rail" aria-label="What we do">
         {
           services.map((item, index) => (
-            <a href="#services">
+            <a href="#work">
               <span>{String(index + 1).padStart(2, "0")}</span>
               {item.title}
             </a>
@@ -62,34 +63,43 @@ const portraits = Object.fromEntries(media.people.map((person) => [person.id, pe
       }
     </section>
 
+    <section class="section about" id="about">
+      <div class="wrap">
+        <div class="about__grid">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">{about.eyebrow}</p>
+            <h2>{about.title}</h2>
+          </div>
+          <div class="about__body" data-reveal style="--reveal:80ms">
+            {
+              about.paragraphs.map((para) => (
+                <p>{para}</p>
+              ))
+            }
+          </div>
+        </div>
+        <ul class="about__values" data-reveal style="--reveal:120ms">
+          {
+            about.values.map((value) => (
+              <li>{value}</li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
     <section class="section" id="work">
       <div class="wrap">
         <div class="section-head" data-reveal>
           <p class="eyebrow">Selected work</p>
           <h2>Projects, up close.</h2>
-          <p class="lede">Architecture, structure, interiors, and landscape. Open any photo to look through the set.</p>
         </div>
         <div data-reveal>
-          <Gallery client:visible slides={media.work} />
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="wrap">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow">Services</p>
-          <h2>What we take on.</h2>
-        </div>
-        <div class="services">
-          {
-            services.map((item, index) => (
-              <article class="service" data-reveal style={`--reveal:${index * 70}ms`}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))
-          }
+          <Services
+            client:visible
+            items={services.map(({ id, title, paragraphs }) => ({ id, title, paragraphs }))}
+            slides={media.work}
+          />
         </div>
       </div>
     </section>

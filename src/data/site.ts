@@ -18,7 +18,6 @@ export const site = {
 
 export const nav = [
   { href: "#work", label: "Work" },
-  { href: "#services", label: "Services" },
   { href: "#clientele", label: "Clientele" },
   { href: "#studio", label: "Our Team" },
   { href: "#enquiry", label: "Contact" },
@@ -31,22 +30,52 @@ export const stats = [
   { value: "6", unit: "", label: "Cities" },
 ];
 
+export const about = {
+  eyebrow: "About us",
+  title: "Building Your Dreams with Excellence",
+  paragraphs: [
+    "We are not just a construction firm. We are a team of professionals who share your passion and enthusiasm for your project. We collaborate with you from the design phase to the completion phase, ensuring that every aspect of your project is done according to your wishes and needs.",
+    "At BuildsWorth, we understand that your construction project is more than just a job. It is your dream, your vision, your future. That is why we are committed to providing you with the best service and quality possible.",
+  ],
+  values: ["Excellence", "Reliability", "Satisfaction", "Trust"],
+};
+
 export const services = [
   {
+    id: "architecture",
     title: "Architecture",
     text: "Planning and design for homes, commercial buildings, and industrial spaces. You get drawings that can actually be built.",
+    paragraphs: [
+      "Architecture is the art and science of designing buildings — planning, engineering, and shaping how a place works. It also reflects the culture, history, and values around it.",
+      "At BuildsWorth, our architects help you realise the vision for a home or workplace. We design and plan residential, commercial, and industrial projects.",
+    ],
   },
   {
+    id: "structure",
     title: "Structure",
     text: "Engineering for strength, wind, earthquake, and fire. We analyse, detail, and stay with the structure on site.",
+    paragraphs: [
+      "A strong, safe structure needs qualified engineers. We design and build to your brief, using materials and methods that stand up to wind, earthquake, and fire.",
+      "We analyse and optimise with modern tools, and stay with you through the job — whether the building is small or large, simple or complex.",
+    ],
   },
   {
+    id: "interiors",
     title: "Interiors",
     text: "Rooms planned around how you live or work. Finishes, lighting, furniture, and fit-out, in a style that is yours.",
+    paragraphs: [
+      "A comfortable, functional interior starts with how you live or work. We design residential, commercial, and industrial spaces — custom, or building on what you already have.",
+      "We help with furniture and fittings across styles: classic, contemporary, rustic, minimalist, or eclectic. Shaped around your preferences.",
+    ],
   },
   {
+    id: "landscaping",
     title: "Landscaping",
     text: "Outdoor space planned for the climate and the ground. Planting, drainage, paths, water, and light.",
+    paragraphs: [
+      "Outdoor space should feel beautiful, useful, and suited to the climate. We design and build landscapes for homes, workplaces, and industrial sites.",
+      "We handle planting, irrigation, drainage, paths, water features, and lighting — tropical, zen, Mediterranean, cottage, or something in between.",
+    ],
   },
 ];
 
