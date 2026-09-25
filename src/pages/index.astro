@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SectionDots from "../components/SectionDots.astro";
 import Services from "../components/Services";
+import PhoneField from "../components/PhoneField";
 import media from "../data/media.json";
 import {
   about,
@@ -274,10 +275,7 @@ const portraits = Object.fromEntries(media.people.map((person) => [person.id, pe
               <span>Name</span>
               <input name="name" type="text" autocomplete="name" required />
             </label>
-            <label class="field">
-              <span>Phone</span>
-              <input name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
-            </label>
+            <PhoneField client:visible />
             <label class="field">
               <span>Email</span>
               <input name="email" type="email" autocomplete="email" />

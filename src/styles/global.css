@@ -1195,6 +1195,65 @@ textarea:focus-visible {
   resize: vertical;
 }
 
+.field--phone .phone-input {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 3rem;
+  border-radius: 0.8rem;
+  background: #12261f;
+  box-shadow: inset 4px 4px 8px #0b1814, inset -3px -3px 8px #234236;
+  overflow: hidden;
+}
+
+.field--phone .PhoneInputCountry {
+  margin: 0;
+  padding: 0 0.55rem 0 0.75rem;
+  border-right: 1px solid rgba(255, 252, 247, 0.12);
+  background: transparent;
+}
+
+.field--phone .PhoneInputCountryIcon {
+  width: 1.45rem;
+  height: 1rem;
+  box-shadow: none;
+  border-radius: 0.15rem;
+  overflow: hidden;
+}
+
+.field--phone .PhoneInputCountrySelectArrow {
+  color: rgba(255, 252, 247, 0.55);
+  opacity: 1;
+  border: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-left: 0.35rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+}
+
+.field--phone .PhoneInputCountrySelect {
+  color: var(--white);
+}
+
+.field--phone .PhoneInputInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 3rem;
+  margin: 0;
+  padding: 0.7rem 0.8rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--white);
+  box-shadow: none;
+  outline: none;
+}
+
+.field--phone .PhoneInputInput::placeholder {
+  color: rgba(255, 252, 247, 0.4);
+}
+
 .picker {
   position: relative;
 }
