@@ -1,6 +1,5 @@
-# GitHub Pages still builds this branch with Jekyll.
-# The live site is Netlify (Astro). Exclude app sources so Jekyll does not
-# treat Astro --- frontmatter as YAML.
+# Keep the legacy branch-based Pages Jekyll job from parsing Astro sources.
+# After switching Pages → Source: GitHub Actions, this file is unused.
 exclude:
   - src
   - scripts
@@ -9,6 +8,7 @@ exclude:
   - public
   - dist
   - .astro
+  - .github
   - package.json
   - package-lock.json
   - astro.config.mjs
@@ -18,5 +18,3 @@ exclude:
   - README.md
   - LICENSE
   - vendor
-  - Gemfile
-  - Gemfile.lock

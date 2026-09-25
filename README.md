@@ -13,7 +13,7 @@ Performance before/after: see [PERFORMANCE.md](./PERFORMANCE.md).
 
 - [Astro](https://astro.build) + React (gallery lightbox)
 - Sharp image pipeline + FFmpeg for the hero video
-- Static host on [Netlify](https://www.netlify.com)
+- Static host on [GitHub Pages](https://pages.github.com/) ([buildsworth.github.io](https://buildsworth.github.io/)); also deployable on Netlify
 
 ## Develop
 
@@ -45,7 +45,16 @@ npm run preview  # preview the build
 
 ## Deploy
 
-Pushes to the connected GitHub repo build on Netlify (`npm run build` → `dist`).
+### GitHub Pages (this repo)
+
+Pushes to `main` run [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml) (`npm run build` → `dist`).
+
+**One-time setup** (needs repo admin): Settings → Pages → Build and deployment → Source → **GitHub Actions**.  
+Until that is set, GitHub still runs the legacy Jekyll job on `main` (kept green via `_config.yml` excludes).
+
+### Netlify (optional)
+
+`netlify.toml` publishes `dist` the same way (`npm run build`).
 
 For the live green/red **deploy status** badge from Netlify: Site settings → General → Status badges → paste that markdown in place of the Netlify badge above.
 
