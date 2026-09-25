@@ -1,0 +1,22 @@
+# GitHub Pages still builds this branch with Jekyll.
+# The live site is Netlify (Astro). Exclude app sources so Jekyll does not
+# treat Astro --- frontmatter as YAML.
+exclude:
+  - src
+  - scripts
+  - resource
+  - node_modules
+  - public
+  - dist
+  - .astro
+  - package.json
+  - package-lock.json
+  - astro.config.mjs
+  - tsconfig.json
+  - netlify.toml
+  - PERFORMANCE.md
+  - README.md
+  - LICENSE
+  - vendor
+  - Gemfile
+  - Gemfile.lock
