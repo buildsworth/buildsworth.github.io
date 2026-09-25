@@ -23,6 +23,16 @@ export const nav = [
   { href: "#enquiry", label: "Contact" },
 ];
 
+export const sectionDots = [
+  { id: "about", label: "About" },
+  { id: "work", label: "Work" },
+  { id: "process", label: "Process" },
+  { id: "studio", label: "Team" },
+  { id: "clientele", label: "Clientele" },
+  { id: "faq", label: "Questions" },
+  { id: "enquiry", label: "Contact" },
+];
+
 export const stats = [
   { value: "21", unit: "lakh sq.ft", label: "Delivered" },
   { value: "62", unit: "", label: "Clients" },

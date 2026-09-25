@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { copyFile, mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { spawn } from "node:child_process";
 import path from "node:path";
 import sharp from "sharp";
@@ -22,6 +22,8 @@ const groups = [
   { dir: "associates", max: 720, kind: "people" },
 ];
 
+const keep = new Set();
+
 function run(cmd, args) {
   return new Promise((resolve, reject) => {
     const child = spawn(cmd, args, { stdio: "inherit" });
@@ -43,7 +45,36 @@ async function writeImage(srcPath, outPath, width, extra = {}) {
     .resize({ width, withoutEnlargement: true, ...extra })
     .webp({ quality: 72, effort: 4 })
     .toFile(hashed);
+  keep.add(path.resolve(hashed));
   return { file: hashed, width: info.width, height: info.height, bytes: info.size };
+}
+
+async function pruneMedia() {
+  const mediaRoot = path.join(root, "public", "media");
+  const stack = [mediaRoot];
+  let removed = 0;
+  while (stack.length) {
+    const dir = stack.pop();
+    let entries = [];
+    try {
+      entries = await readdir(dir, { withFileTypes: true });
+    } catch {
+      continue;
+    }
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(full);
+        continue;
+      }
+      if (!keep.has(path.resolve(full))) {
+        await rm(full, { force: true });
+        removed += 1;
+        console.log(`prune ${path.relative(root, full)}`);
+      }
+    }
+  }
+  if (removed) console.log(`pruned ${removed} stale media files`);
 }
 
 const manifest = { hero: null, og: "/og.png", work: [], people: [], clientele: [] };
@@ -198,11 +229,13 @@ for (const file of clientFiles) {
     .resize({ width: 480, withoutEnlargement: true })
     .webp({ quality: 72, effort: 4 })
     .toFile(outPath);
+  keep.add(path.resolve(outPath));
   const rel = `/media/clientele/${id}.webp`;
   manifest.clientele.push({ src: rel, width: info.width, height: info.height });
   console.log(`${rel}  ${info.width}x${info.height}  ${Math.round(info.size / 1024)}KB`);
 }
 
+await pruneMedia();
 await writeFile(path.join(root, "src", "data", "media.json"), JSON.stringify(manifest, null, 2));
 
 await mkdir(path.join(root, "public", "video"), { recursive: true });

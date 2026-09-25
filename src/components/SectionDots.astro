@@ -1,0 +1,51 @@
+---
+import { sectionDots } from "../data/site";
+---
+
+<nav class="section-dots" aria-label="On this page" data-section-dots>
+  {
+    sectionDots.map((item) => (
+      <a href={`#${item.id}`} data-dot={item.id} aria-label={item.label} title={item.label}>
+        <span class="sr">{item.label}</span>
+      </a>
+    ))
+  }
+</nav>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-section-dots]");
+  const links = [...document.querySelectorAll<HTMLAnchorElement>("[data-dot]")];
+  if (root && links.length) {
+    const sections = links
+      .map((link) => document.getElementById(link.dataset.dot ?? ""))
+      .filter((el): el is HTMLElement => Boolean(el));
+
+    const setActive = (id: string) => {
+      links.forEach((link) => {
+        link.classList.toggle("is-on", link.dataset.dot === id);
+      });
+    };
+
+    const onScroll = () => {
+      const show = window.scrollY > Math.min(window.innerHeight * 0.45, 420);
+      root.classList.toggle("is-visible", show);
+    };
+
+    const seen = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]?.target.id) setActive(visible[0].target.id);
+      },
+      {
+        rootMargin: "-35% 0px -45% 0px",
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sections.forEach((section) => seen.observe(section));
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+</script>
