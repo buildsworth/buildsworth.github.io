@@ -198,8 +198,30 @@ const portraits = Object.fromEntries(media.people.map((person) => [person.id, pe
         <ul class="logo-grid">
           {
             clientele.map((item) => (
-              <li data-reveal>
-                <img src={item.src} alt={item.name} width="160" height="160" />
+              <li class="logo-coin" data-reveal>
+                <span class="logo-coin__inner">
+                  <span class="logo-coin__edge" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </span>
+                  <img
+                    class="logo-coin__face logo-coin__face--front"
+                    src={item.src}
+                    alt=""
+                    width="160"
+                    height="160"
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
+                  <img
+                    class="logo-coin__face logo-coin__face--back"
+                    src={item.src}
+                    alt={item.name}
+                    width="160"
+                    height="160"
+                    loading="lazy"
+                  />
+                </span>
               </li>
             ))
           }

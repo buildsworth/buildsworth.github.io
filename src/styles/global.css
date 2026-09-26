@@ -1534,25 +1534,91 @@ address {
   justify-items: center;
 }
 
-.logo-grid li {
+.logo-coin {
+  --coin-depth: 12px;
   display: grid;
   place-items: center;
+  width: min(9.25rem, 100%);
+  aspect-ratio: 1;
+  perspective: 900px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.logo-coin__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background: var(--neu);
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow:
     10px 10px 20px var(--neu-lo),
     -8px -8px 18px var(--neu-hi);
 }
 
-.logo-grid img {
+.logo-coin:hover .logo-coin__inner,
+.logo-coin:focus-within .logo-coin__inner {
+  transform: rotateY(180deg);
+}
+
+.logo-coin__edge {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.logo-coin__edge span {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    #0d1c16 0%,
+    #1e4a38 28%,
+    #12281f 52%,
+    #2a5c47 78%,
+    #0f221a 100%
+  );
+  box-shadow: inset 0 0 0 1px rgba(8, 18, 14, 0.45);
+}
+
+.logo-coin__edge span:nth-child(1) { transform: translateZ(calc(var(--coin-depth) * -0.45)); }
+.logo-coin__edge span:nth-child(2) { transform: translateZ(calc(var(--coin-depth) * -0.35)); }
+.logo-coin__edge span:nth-child(3) { transform: translateZ(calc(var(--coin-depth) * -0.25)); }
+.logo-coin__edge span:nth-child(4) { transform: translateZ(calc(var(--coin-depth) * -0.15)); }
+.logo-coin__edge span:nth-child(5) { transform: translateZ(calc(var(--coin-depth) * -0.05)); }
+.logo-coin__edge span:nth-child(6) { transform: translateZ(calc(var(--coin-depth) * 0.05)); }
+.logo-coin__edge span:nth-child(7) { transform: translateZ(calc(var(--coin-depth) * 0.15)); }
+.logo-coin__edge span:nth-child(8) { transform: translateZ(calc(var(--coin-depth) * 0.25)); }
+.logo-coin__edge span:nth-child(9) { transform: translateZ(calc(var(--coin-depth) * 0.35)); }
+.logo-coin__edge span:nth-child(10) { transform: translateZ(calc(var(--coin-depth) * 0.45)); }
+
+.logo-coin__face {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 9.25rem;
-  height: auto;
+  height: 100%;
+  margin: 0;
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
   background: var(--neu);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.logo-coin__face--front {
   filter: grayscale(0.88) contrast(1.02) brightness(1.02);
+  transform: translateZ(calc(var(--coin-depth) / 2));
+}
+
+.logo-coin__face--back {
+  filter: none;
+  transform: rotateY(180deg) translateZ(calc(var(--coin-depth) / 2));
 }
 
 .clientele {
@@ -1608,7 +1674,7 @@ address {
   top: 50%;
   right: 0.85rem;
   z-index: 35;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
@@ -1755,6 +1821,7 @@ body.nav-open .section-dots {
   }
 
   .section-dots {
+    display: flex;
     right: 1.15rem;
   }
 
@@ -1763,10 +1830,8 @@ body.nav-open .section-dots {
     gap: 2.25rem 1.5rem;
   }
 
-  .logo-grid img {
+  .logo-coin {
     width: min(12rem, 100%);
-    max-width: none;
-    height: min(12rem, 100%);
   }
 }
 
@@ -1860,6 +1925,20 @@ body.nav-open .section-dots {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .logo-coin__inner {
+    transition: none;
+  }
+
+  .logo-coin:hover .logo-coin__inner,
+  .logo-coin:focus-within .logo-coin__inner {
+    transform: none;
+  }
+
+  .logo-coin:hover .logo-coin__face--front,
+  .logo-coin:focus-within .logo-coin__face--front {
+    filter: none;
   }
 
   .shot img,
