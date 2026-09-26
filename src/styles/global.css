@@ -276,6 +276,12 @@ body.nav-open .site-header__bg {
   margin-inline: auto;
   background: currentColor;
   position: relative;
+  transform-origin: center;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.28s ease,
+    opacity 0.28s ease;
 }
 
 .nav-toggle__bars::before,
@@ -1948,6 +1954,9 @@ body.nav-open .section-dots {
   .faq details,
   .wa-float,
   .section-dots,
+  .nav-toggle__bars,
+  .nav-toggle__bars::before,
+  .nav-toggle__bars::after,
   .person img,
   body.nav-open .site-nav,
   body.nav-open .site-nav a,
