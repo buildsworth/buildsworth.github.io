@@ -1340,14 +1340,25 @@ textarea:focus-visible {
 }
 
 .hp {
+  display: none !important;
+  visibility: hidden;
   position: absolute;
-  left: -9999px;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .form-note {
   margin-top: 0.75rem;
   color: rgba(255, 252, 247, 0.62);
   font-size: 0.86rem;
+}
+
+.form-status.is-error {
+  color: #f0c7b8;
 }
 
 .form-note a {

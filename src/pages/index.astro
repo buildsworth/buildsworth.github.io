@@ -288,11 +288,20 @@ const portraits = Object.fromEntries(media.people.map((person) => [person.id, pe
               </p>
             </div>
           </div>
-          <form name="enquiry" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" data-reveal style="--reveal:80ms">
-            <input type="hidden" name="form-name" value="enquiry" />
-            <p class="hp" aria-hidden="true">
-              <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-            </p>
+          <form
+            name="enquiry"
+            method="POST"
+            action={`https://formsubmit.co/ajax/${site.email}`}
+            data-enquiry-form
+            data-thanks={`${site.url}/thanks`}
+            data-reveal
+            style="--reveal:80ms"
+          >
+            <input type="hidden" name="_subject" value="BuildsWorth enquiry" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_blacklist" value="spam,viagra,crypto,bitcoin,seo,casino" />
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <label class="field">
               <span>Name</span>
               <input name="name" type="text" autocomplete="name" required />
@@ -300,7 +309,7 @@ const portraits = Object.fromEntries(media.people.map((person) => [person.id, pe
             <PhoneField client:visible />
             <label class="field">
               <span>Email</span>
-              <input name="email" type="email" autocomplete="email" />
+              <input name="email" type="email" autocomplete="email" required />
             </label>
             <div class="field">
               <span id="project-label">Project type</span>
@@ -341,13 +350,14 @@ const portraits = Object.fromEntries(media.people.map((person) => [person.id, pe
               <span>Message</span>
               <textarea name="message" required></textarea>
             </label>
-            <button class="btn btn--solid" type="submit">
+            <button class="btn btn--solid" type="submit" data-enquiry-submit>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M22 2 11 13" />
                 <path d="M22 2 15 22l-4-9-9-4 20-7Z" />
               </svg>
-              Send enquiry
+              <span data-enquiry-label>Send enquiry</span>
             </button>
+            <p class="form-note form-status" data-enquiry-status hidden role="status" aria-live="polite"></p>
             <p class="form-note">
               We use this only to reply. See <a href="/privacy">privacy</a>.
             </p>
@@ -433,5 +443,55 @@ const portraits = Object.fromEntries(media.people.map((person) => [person.id, pe
         });
       });
     });
+
+    const enquiry = document.querySelector<HTMLFormElement>("[data-enquiry-form]");
+    if (enquiry) {
+      const submit = enquiry.querySelector<HTMLButtonElement>("[data-enquiry-submit]");
+      const label = enquiry.querySelector<HTMLElement>("[data-enquiry-label]");
+      const status = enquiry.querySelector<HTMLElement>("[data-enquiry-status]");
+      const thanks = enquiry.dataset.thanks || "/thanks";
+      const idleLabel = label?.textContent ?? "Send enquiry";
+
+      enquiry.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!enquiry.checkValidity()) {
+          enquiry.reportValidity();
+          return;
+        }
+
+        const honey = enquiry.querySelector<HTMLInputElement>('input[name="_honey"]');
+        if (honey?.value) return;
+
+        submit && (submit.disabled = true);
+        if (label) label.textContent = "Sending…";
+        if (status) {
+          status.hidden = true;
+          status.textContent = "";
+          status.classList.remove("is-error");
+        }
+
+        try {
+          const response = await fetch(enquiry.action, {
+            method: "POST",
+            body: new FormData(enquiry),
+            headers: { Accept: "application/json" },
+          });
+          const payload = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            throw new Error(typeof payload.message === "string" ? payload.message : "Could not send enquiry.");
+          }
+          window.location.assign(thanks);
+        } catch (error) {
+          if (status) {
+            status.hidden = false;
+            status.classList.add("is-error");
+            status.textContent =
+              error instanceof Error ? error.message : "Could not send enquiry. Please try again or call us.";
+          }
+          submit && (submit.disabled = false);
+          if (label) label.textContent = idleLabel;
+        }
+      });
+    }
   </script>
 </Base>
